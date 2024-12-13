@@ -1,6 +1,8 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = 'https://draw-board-server.vercel.app/';
-const socket = io(SOCKET_URL);
+const socket = io("https://draw-board-server.vercel.app", {
+  transports: ['websocket', 'polling'],
+  withCredentials: true,
+});
 
 export default socket;
